@@ -1,0 +1,124 @@
+/* Global Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    padding: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #fff;
+    color: #333;
+}
+
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.profile-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.profile-picture img {
+    width: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.profile-details h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.profile-details button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.profile-details button:hover {
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+}
+
+.videos h2,
+.history h2,
+.favorites h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.video-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.video-thumbnail {
+    width: calc(33.33% - 20px);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.video-thumbnail a {
+    display: block;
+}
+
+.video-thumbnail img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.video-thumbnail h3 {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.video-thumbnail h3 a {
+    color: #333;
+    text-decoration: none;
+}
+
+.video-thumbnail p {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 10px;
+}

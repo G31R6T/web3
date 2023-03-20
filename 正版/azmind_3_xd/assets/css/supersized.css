@@ -1,0 +1,49 @@
+ /* 消除所有默认边距为0 
+    页面背景颜色为灰色，高度200，这个无所谓
+	为所有的img图片删除边框
+	supersized 是图片加载动画
+	
+	* { margin:0; padding:0; }：此规则将所有HTML元素的外边距和内边距设置为0，以消除默认的浏览器样式。
+
+body { background:#111; height:100%; }：将页面的背景颜色设置为深灰色，并设置高度为100%。
+
+img { border:none; }：为所有图片元素删除边框。
+
+#supersized-loader {...}：定义了一个名为supersized-loader的元素，主要用于显示图片加载过程中的加载动画。这个规则设置了其位置、尺寸和背景。
+
+#supersized {...} 和 #supersized img {...}：这些规则定义了名为supersized的元素及其子元素img的样式。这些规则设置了位置、尺寸、溢出和z-index等属性。
+
+#supersized li {...} 和 #supersized a {...}：这些规则定义了supersized元素中的列表项（li）和锚（a）元素的样式。这些规则设置了显示、列表样式类型、位置、溢出和尺寸等属性。
+
+#supersized li.prevslide {...} 和 #supersized li.activeslide {...}：这些规则为具有类prevslide和activeslide的列表项（li）元素定义了样式。这些元素分别表示前一张幻灯片和当前激活的幻灯片。规则设置了z-index属性，以便正确地在页面上堆叠这些幻灯片。
+
+#supersized li.image-loading {...} 和 #supersized li.image-loading img {...}：这些规则为加载中的图片定义了样式。规则设置了背景、尺寸和可见性等属性。
+
+#supersized li.prevslide img, #supersized li.activeslide img { display:inline; }：这个规则将前一张幻灯片和当前激活的幻灯片的图片显示设置为内联。
+
+#supersized img { max-width: none !important }：这个规则将#supersized内的图片元素的最大宽度设置为无限制，并使用!important确保覆盖其他可能存在的样式。
+
+ */
+* { margin:0; padding:0; }
+body { background:#363333; height:200%; }
+     /* 上面是消除所有默认边距为0 */
+	img { border:none; }
+	
+	#supersized-loader { position:absolute; top:50%; left:50%; z-index:0; width:60px; height:60px; margin:-30px 0 0 -30px; text-indent:-999em; background:url() no-repeat center center;}
+	
+	#supersized {  display:block; position:fixed; left:0; top:0; overflow:hidden; z-index:-999; height:100%; width:100%; }
+		#supersized img { width:auto; height:auto; position:relative; display:none; outline:none; border:none; }
+			#supersized.speed img { -ms-interpolation-mode:nearest-neighbor; image-rendering: -moz-crisp-edges; }	/*Speed*/
+			#supersized.quality img { -ms-interpolation-mode:bicubic; image-rendering: optimizeQuality; }			/*Quality*/
+		
+		#supersized li { display:block; list-style:none; z-index:-30; position:fixed; overflow:hidden; top:0; left:0; width:100%; height:100%; background:#111; }
+		#supersized a { width:100%; height:100%; display:block; }
+			#supersized li.prevslide { z-index:-20; }
+			#supersized li.activeslide { z-index:-10; }
+			#supersized li.image-loading { background:#111 url() no-repeat center center; width:100%; height:100%; }
+				#supersized li.image-loading img{ visibility:hidden; }
+			#supersized li.prevslide img, #supersized li.activeslide img{ display:inline; }
+
+
+#supersized img { max-width: none !important }
+
